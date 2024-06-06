@@ -7,8 +7,7 @@ const { readItems, readBrands } = require("./Database/database");
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(timeout("60s"));
-app.get("/", (req, res) => {
+app.get("/", timeout("60s"), (req, res) => {
   const type = req.query.type;
   switch (type) {
     case "all":
