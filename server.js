@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/", (req, res) => {
+  const text = "test";
+  res.send(test);
+});
 // app.get("/", (req, res) => {
 //   const type = req.query.type;
 //   switch (type) {
