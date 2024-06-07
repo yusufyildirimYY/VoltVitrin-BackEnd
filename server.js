@@ -1,11 +1,14 @@
 const express = require("express");
 const cors = require("cors");
-
 const { readItems, readBrands } = require("./Database/database");
 
 const app = express();
 app.use(express.json());
 app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("Welcome to the VoltVitrin-BackEnd API");
+});
 
 app.get("/api", (req, res) => {
   const type = req.query.type;
