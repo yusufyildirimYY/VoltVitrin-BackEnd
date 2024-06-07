@@ -28,7 +28,6 @@ app.get("/", (req, res) => {
       });
       break;
   }
-  return "Denemee";
 });
 
 app.listen(process.env.PORT || 3000, () => {
