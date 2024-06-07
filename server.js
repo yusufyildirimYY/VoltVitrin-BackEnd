@@ -6,7 +6,8 @@ const { readItems, readBrands } = require("./Database/database");
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.get("/", (req, res) => {
+
+app.get("/api", (req, res) => {
   const type = req.query.type;
   switch (type) {
     case "all":
@@ -27,6 +28,8 @@ app.get("/", (req, res) => {
         }
       });
       break;
+    default:
+      res.status(404).send("Not Found");
   }
 });
 
